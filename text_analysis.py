@@ -200,10 +200,12 @@ def srt_list_from_file(filename):
         #
         #  If _last_line is empty then we should start a new srt
         #
-        #  Later I should add some checks for multiple blank lines
+        #  The first thing we expect is a line number, sometimes the line number is followed by -'s
+        #  so I am going to remove -'s from the line
         if _last_line == '':
             if line != '':
                 line_strip = line.strip()
+                line_strip = line_strip.strip('-')
                 assert line_strip.isdigit(), \
                     '\nIn file: %s, line: %s \n\tProblem with SRT input file, \n\tline number expected recieved: %s' \
                     % (filename, _global_line_number, line)
