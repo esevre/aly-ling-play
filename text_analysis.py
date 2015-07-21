@@ -1,4 +1,7 @@
 # from __builtin__ import open, len, int, unicode, object
+#
+#  Just adding some comments to the top of this file
+#
 import os, codecs
 
 __author__ = 'esevre'
